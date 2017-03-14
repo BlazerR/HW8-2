@@ -1,6 +1,14 @@
 <?php
 
 //set default values to be used when page first loads
+if (isset($_POST['action'])) {
+    $action =  $_POST['action'];
+} else {
+    $action =  'start_app';
+}
+
+switch ($action) {
+    case 'start_app':
 $scores = array();
 $scores[0] = 70;
 $scores[1] = 80;
