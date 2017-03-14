@@ -9,16 +9,20 @@ if (isset($_POST['action'])) {
 
 switch ($action) {
     case 'start_app':
-$scores = array();
-$scores[0] = 70;
-$scores[1] = 80;
-$scores[2] = 90;
+        $scores = array();
+        $scores[0] = 70;
+        $scores[1] = 80;
+        $scores[2] = 90;
+        break;
+
+    case 'process_scores':
+        $scores = $_POST['scores'];
         
-$scores_string = '';
-$score_total = 0;
-$score_average = 0;
-$max_rolls = 0;
-$average_rolls = 0;
+        $scores_string = '';
+        $score_total = 0;
+        $score_average = 0;
+        $max_rolls = 0;
+        $average_rolls = 0;
 
 //take action based on variable in POST array
 $action = filter_input(INPUT_POST, 'action');
