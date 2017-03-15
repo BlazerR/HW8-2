@@ -14,9 +14,17 @@ switch ($action) {
         $scores[1] = 80;
         $scores[2] = 90;
         break;
-
     case 'process_scores':
         $scores = $_POST['scores'];
+    
+      $is_valid = true;
+		  for ($i = 0; $i < count($scores); $i++) {
+			    if (empty($scores[$i]) || !is_numeric($scores[$i])) {
+       $scores_string = 'You must enter three valid numbers for scores.';
+       $is_valid = false;
+       break;
+			          }
+       }
         
         $scores_string = '';
         $score_total = 0;
